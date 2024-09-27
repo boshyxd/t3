@@ -1,4 +1,3 @@
-
 #include "Date.h"
 
 Date::Date(){
@@ -50,14 +49,14 @@ void Date::setDate(Date& d){
 int Date::getDay() { return day; }
 int Date::getMonth() { return month; }
 int Date::getYear() { return year; }
-string Date::getMonthName() {
+string Date::getMonthName() const {
 	string months[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 	return months[month-1];
 }
 
 //other
 
-bool Date::lessThan( Date& d) {
+bool Date::lessThan(const Date& d) const {
 	if (year < d.year) return true;
 	if (year > d.year) return false;
 	//years are equal
@@ -92,8 +91,8 @@ void Date::addDays(int num){
 	}
 }
 
-void Date::print() {
-	cout << getMonthName()<<" "<<day<<", "<<year;
+void Date::print() const { // Add const here
+	cout << getMonthName() << " " << day << ", " << year;
 }
 
 

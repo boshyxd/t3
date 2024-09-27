@@ -1,4 +1,3 @@
-
 #ifndef DATE_H
 #define DATE_H
 
@@ -27,14 +26,14 @@ class Date {
 		int getDay() ;
 		int getMonth() ;
 		int getYear() ;
-		string getMonthName() ;
+		string getMonthName() const;
 		
 		//other
 		void incDate();
 		void addDays(int);
-		bool lessThan( Date& d) ;
+		bool lessThan(const Date& d) const;
 		bool equals( Date& d) ;
-		void print() ;
+		void print() const;
 	
 	private:
 		//functions
